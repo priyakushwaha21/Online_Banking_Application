@@ -22,14 +22,14 @@ function AccountForm({
   const [amount, setAmount] = useState("");
   const [targetAccount, setTargetAccount] = useState("");
   const [accountInfo, setAccountInfo] = useState({
-    transactionType: "", // Transaction Type seçim kutusu
+    transactionType: "", // Transaction Type dropdown
     
   });
   const [paymentInfo, setPaymentInfo] = useState({
-    beneficiary: "", // Transaction Type seçim kutusu
-    account_number: "", // Transaction Type seçim kutusu
-    reference: "", // Transaction Type seçim kutusu
-    payment_amount: "", // Transaction Type seçim kutusu
+    beneficiary: "", // Transaction Type selection box
+    account_number: "", // Transaction Type selection box
+    reference: "", // Transaction Type selection box
+    payment_amount: "", // Transaction Type selection box
     
   })
 
@@ -41,7 +41,7 @@ function AccountForm({
       const response = await axios.post(apiUrl, jsonData, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer: " + accessToken, // JSON verisi göndermek için content type ayarı
+          Authorization: "Bearer: " + accessToken,
         },
       });
 
@@ -103,7 +103,7 @@ function AccountForm({
     actions.getTransactionHistory()
 
     onSaveAccount(accountInfo);
-    onClose(); // Yan menüyü kapat
+    onClose(); 
   };
 
   const handleWithdrawMoney = (event) => {
@@ -123,7 +123,7 @@ function AccountForm({
     actions.getTransactionHistory()
 
     onSaveAccount(accountInfo);
-    onClose(); // Yan menüyü kapat
+    onClose(); 
   };
 
   const handleTransferMoney = (event) => {
@@ -144,7 +144,7 @@ function AccountForm({
     actions.getTransactionHistory()
 
     onSaveAccount(accountInfo);
-    onClose(); // Yan menüyü kapat
+    onClose(); 
   };
 
   const handlePaymentTransaction = (event) => {
@@ -163,7 +163,7 @@ function AccountForm({
     actions.getTransactionHistory()
 
     onSaveAccount(accountInfo);
-    onClose(); // Yan menüyü kapat
+    onClose(); 
   };
 
   return (
@@ -208,7 +208,7 @@ function AccountForm({
         </Select>
 
         {accountInfo.transactionType === "Deposit Transaction" ? (
-          // Eğer "Deposit Transaction" seçildi ise bu TextField görüntülenir
+          // If Deposit Transaction is selected, this TextField will be displayed....
           <>
             <TextField
               readonly

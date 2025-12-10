@@ -56,7 +56,7 @@ export default function SignInSide() {
         "http://127.0.0.1:8070/login";
       const response = await axios.post(apiUrl, jsonData, {
         headers: {
-          "Content-Type": "application/json", // JSON verisi göndermek için content type ayarı
+          "Content-Type": "application/json", 
         },
       });
 
@@ -67,11 +67,11 @@ export default function SignInSide() {
         navigate('/dashboard')
       }
 
-      console.log("Kullanıcı başarıyla giris yapti:", response.data);
+      console.log("The user has successfully logged in.", response.data);
     } catch (error) {
-      // İstek başarısız olduğunda hata işlemlerini burada yapabilirsiniz
+      // You can handle errors here when the request fails
       alertify.error("Login failed.")
-      console.error("Kullanıcı giris yaparken bir hata olustu.", error);
+      console.error("An error occurred while the user was logging in.", error);
     }
     console.log({
       email: data.get("email"),

@@ -22,7 +22,7 @@ function Accounts(props) {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const handleSaveAccount = (accountInfo) => {
-    console.log("Yeni hesap bilgileri:", accountInfo);
+    console.log("Account Info:", accountInfo);
   };
 
 

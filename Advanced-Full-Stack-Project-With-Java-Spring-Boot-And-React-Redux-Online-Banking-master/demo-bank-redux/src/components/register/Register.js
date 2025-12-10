@@ -60,7 +60,7 @@ export default function SignUp() {
         "http://127.0.0.1:8070/register?confirm_password=" + confirmPassword;
       const response = await axios.post(apiUrl, jsonData, {
         headers: {
-          "Content-Type": "application/json", // JSON verisi göndermek için content type ayarı
+          "Content-Type": "application/json",
         },
       });
 
@@ -68,11 +68,11 @@ export default function SignUp() {
         alertify.success("Registiration succesfull.")
       }
 
-      console.log("Kullanıcı başarıyla kaydedildi:", response.data);
+      console.log("This is response:", response.data);
     } catch (error) {
-      // İstek başarısız olduğunda hata işlemlerini burada yapabilirsiniz
+      
       alertify.error("Registiration failed.")
-      console.error("Kullanıcı kaydedilirken hata oluştu:", error);
+      console.error("Error occurred while saving user:", error);
     }
 
     

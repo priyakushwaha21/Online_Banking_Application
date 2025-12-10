@@ -93,13 +93,13 @@ const Drawer = styled(MuiDrawer, {
   },
 }));
 
-// TODO remove, this demo shouldn't need to reset the theme.
+// remove, theme reset nhi krni h 
 const defaultTheme = createTheme();
 
 export default function Dashboard() {
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
-  // Boş bağımlılık dizisi, sadece bir kez çalışmasını sağlar (componentDidMount benzeri)
+  // bss ek baar run hona chahiye isliye useState me rkh dia
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -113,7 +113,7 @@ export default function Dashboard() {
 
       //local stroge token
       const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-      const accessToken = userInfo.access_token; // access_token değerini al
+      const accessToken = userInfo.access_token; // access token nikal rahe h
 
       //header object
       const headers = {
@@ -129,20 +129,20 @@ export default function Dashboard() {
         navigate("/");
       }
 
-      console.log("Kullanıcı başarıyla cikis yapti:", response.data);
+      console.log("User successfully logged out:", response.data);
     } catch (error) {
-      // İstek başarısız olduğunda hata işlemlerini burada yapabilirsiniz
+      // jb request fail ho jaye to ye run krna 
 
       alertify.error("Logout failed.");
-      console.error("Kullanıcı cikis yaparken bir hata olustu.", error);
+      console.error("Error occurred while logging out the user.", error);
     }
   };
 
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const handleSaveAccount = (accountInfo) => {
-    console.log("Yeni hesap bilgileri:", accountInfo);
-    // Hesap bilgilerini işle
+    console.log("New Account information:", accountInfo);
+    // processing account info if needed
   };
 
   return (
