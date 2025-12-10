@@ -18,11 +18,11 @@ React and Redux Article My Article
 Feel free to ask if you have any further questions or need additional information!
 
 Project Images and Components
-![Page 1](src/main/resources/ProjectPage1.png)
-![Page 2](src/main/resources/ProjectPage2.png)
-![Page 3](src/main/resources/ProjectPage3.png)
+![Page 1](demo-bank-redux/Screenshots/ProjectPage1.png)
+![Page 2](demo-bank-redux/Screenshots/ProjectPage2.png)
+![Page 3](demo-bank-redux/Screenshots/ProjectPage3.png)
+![Page 5](demo-bank-redux/Screenshots/ProjectPage5.png)
 
-![Page 5](src/main/resources/ProjectPage5.png)
 
 
 Features
