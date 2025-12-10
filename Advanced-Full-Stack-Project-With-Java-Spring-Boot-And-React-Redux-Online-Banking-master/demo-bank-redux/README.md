@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+Online Banking Full Stack Project Frontent Readme File
+This is a full-stack project. You can access the backend details of the project from the link below. At this point, we will focus on the frontend.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Java Spring Online Banking Rest Api Java Spring Rest API
 
-## Available Scripts
+The application is a Frontend project prepared for the Online Banking Rest API. React and Redux are used in the frontend of the application. The project is a single-page application, and I have fully leveraged the benefits provided by Redux. Every component you will see in the project is connected to the Redux Store. When the state of one component changes, all components that need to update their state automatically do so, providing users with real-time information.
 
-In the project directory, you can run:
+Users can register, log in, view their account history, open new accounts, make transfers between accounts, deposit money, withdraw money, and make payments. Additionally, a self-updating chart has been prepared for users to view their account flows. In short, the components are constantly in communication with the backend, ensuring seamless interaction.
 
-### `npm start`
+If you want to watch the project video you can visit my LinkedIn account:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+My LinkedIn Account LinkedIn
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+If you want to learn more about React and Redux, you can check out my article on React and Redux:
 
-### `npm test`
+React and Redux Article My Article
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Feel free to ask if you have any further questions or need additional information!
 
-### `npm run build`
+Project Images and Components
+![Page 1](src/main/resources/ProjecPage1.png)
+![Page 2](src/main/resources/ProjectPage2.png)
+![Page 3](src/main/resources/ProjectPage3.png)
+![Page 4](src/main/resources/ProjectPage4.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Features
+React and Redux
+Single Page Application
+Material UI
+Distribution
+1- Clone the project to your local machine. 2- Build and run the application using your preferred Java Script environment.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Start for Project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  npm install
+  npm run start
+Technologies
+Language: Java Script
 
-### `npm run eject`
+Technologies: - React, Redux, Router Dom
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Redux Thunk
+Related projects
+You can take a look at the frontends for my React Redux Online Banking App and Android Java Online Banking App projects for this application.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Java Spring Online Banking Rest Api Java Spring Rest API
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Android Online Banking App: Android Java Online Banking App
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Extracted Lessons
+React, Redux, Thunk usage. JavaScript experiences. Communication with backend. CORS Policy Setting. MUI usage. Frontend web development. JWT and cookies.
