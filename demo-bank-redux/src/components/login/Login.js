@@ -53,7 +53,7 @@ export default function SignInSide() {
     
     try {
       const apiUrl =
-        "http://127.0.0.1:8070/login";
+        "http://127.0.0.1:8071/login";
       const response = await axios.post(apiUrl, jsonData, {
         headers: {
           "Content-Type": "application/json", // JSON verisi göndermek için content type ayarı

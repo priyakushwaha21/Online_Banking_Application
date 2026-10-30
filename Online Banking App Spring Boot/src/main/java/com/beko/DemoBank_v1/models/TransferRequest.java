@@ -28,9 +28,5 @@ public class TransferRequest {
     public void setAmount(String amount) {
         this.amount = amount;
     }
-
-
-    // Getter ve Setter metotları
-    // Default constructor
 }
 

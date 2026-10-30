@@ -22,7 +22,7 @@ export function getAccounts() {
   const accessToken = userInfo.access_token;
 
   return function (dispatch) {
-    const apiUrl = "http://127.0.0.1:8070/app/dashboard";
+    const apiUrl = "http://127.0.0.1:8071/app/dashboard";
     axios
       .get(apiUrl, {
         headers: {
@@ -46,7 +46,7 @@ export function getTotalBalance(){
   const accessToken = userInfo.access_token;
 
   return function (dispatch) {
-    const apiUrl = "http://127.0.0.1:8070/app/dashboard";
+    const apiUrl = "http://127.0.0.1:8071/app/dashboard";
     axios
       .get(apiUrl, {
         headers: {
@@ -72,7 +72,7 @@ export function getTransactionHistory() {
 
 
   return function (dispatch) {
-    const apiUrl = "http://127.0.0.1:8070/app/transaction_history";
+    const apiUrl = "http://127.0.0.1:8071/app/transaction_history";
     axios
       .get(apiUrl, {
         headers: {

@@ -53,9 +53,16 @@ public class AppInterceptor implements HandlerInterceptor{
             //Get Access Token From Header
             String token = jwtService.getAccessTokenFromHeader(header);
 
+            if(token == null || token.equals("undefined") || token.isEmpty()){
+                throw new CustomError("Invalid token.",HttpServletResponse.SC_UNAUTHORIZED);
+            }
+
             //Decode Token
             System.out.println("Jwt from logout: " + token);
             Claims claims = jwtService.decodeToken(token);
+            if(claims == null){
+                throw new CustomError("Invalid token.",HttpServletResponse.SC_UNAUTHORIZED);
+            }
             String email = claims.getSubject(); //email burada
 
             //Get User By Email
@@ -67,10 +74,10 @@ public class AppInterceptor implements HandlerInterceptor{
 
 
             //TODO: Get Token Stored int Session:
-            System.out.println("allahım lütfen token yazsın "+ request.getSession().getAttribute("token"));
+            System.out.println("please let it write the token "+ request.getSession().getAttribute("token"));
 
             //TODO: Get User Object Stored In Session:
-            System.out.println("allahım lütfen user yazsın "+ request.getSession().getAttribute("user"));
+            System.out.println("please let it say ‘user"+ request.getSession().getAttribute("user"));
 
             //TODO: Validate Session Attributes / Objects:
             if(user == null ){

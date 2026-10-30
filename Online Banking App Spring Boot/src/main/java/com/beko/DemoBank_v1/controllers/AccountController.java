@@ -1,6 +1,5 @@
 package com.beko.DemoBank_v1.controllers;
 
-
 import com.beko.DemoBank_v1.helpers.GenAccountNumber;
 import com.beko.DemoBank_v1.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;

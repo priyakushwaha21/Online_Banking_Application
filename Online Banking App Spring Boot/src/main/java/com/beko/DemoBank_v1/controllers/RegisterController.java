@@ -45,7 +45,7 @@ public class RegisterController {
         //
         //TODO: CHECK FOR PASSWORD MATCH:
         if(!password.equals(confirmPassword))
-            return ResponseEntity.badRequest().body("Şifreler uyuşmuyor.");
+            return ResponseEntity.badRequest().body("The passwords don’t match");
         //TODO: GET TOKEN STRING:
         String token = Token.generateToken();
 
@@ -54,25 +54,29 @@ public class RegisterController {
         int bound = 123;
         int code = bound * rand.nextInt(bound);
 
-        //TODO: GET EMAIL HTML BODY
-        String emailBody = HTML.htmlEmailTemplate(token, Integer.toString(code));
+        // //TODO: GET EMAIL HTML BODY
+        // String emailBody = HTML.htmlEmailTemplate(token, Integer.toString(code));
         //TODO: HASH PASSWORD:
         String hashed_password = BCrypt.hashpw(password, BCrypt.gensalt());
 
-        //TODO: REGISTER USER:
-        userRepository.registerUser(firstName, lastName, email, hashed_password, token, Integer.toString(code));
+        //TODO: REGISTER USER
+user.setPassword(hashed_password);
+user.setToken(token);
+user.setCode(Integer.toString(code));
+
+userRepository.save(user);
 
         //TODO: SEND EMAIL NOTIFICATION
-        try {
-            MailMessenger.htmlEmailMessenger("user@beko.com", email, "Verify Account", emailBody);
-        } catch (MessagingException e) {
-            throw new RuntimeException(e);
-        }
+        // try {
+        //     // MailMessenger.htmlEmailMessenger("user@beko.com", email, "Verify Account", emailBody);
+        // } catch (MessagingException e) {
+        //     throw new RuntimeException(e);
+        // }
 
         //TODO: RETURN REGISTIRATION SUCCESS
         Map<String, Object> response = new HashMap<>();
         response.put("message", "Registration success. Please check your email and verify your account." );
-        response.put("user", user); // veya başka verileri ekleyebilirsiniz
+        response.put("user", user); // or you can add other data
         return ResponseEntity.ok(response);
     }
 }

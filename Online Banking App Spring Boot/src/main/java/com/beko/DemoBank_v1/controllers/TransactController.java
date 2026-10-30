@@ -78,7 +78,7 @@ public class TransactController {
 
         Map<String, Object> response = new HashMap<>();
         response.put("message", "Amount Deposited Successfully.");
-        response.put("accounts", accountRepository.getUserAccountsById(user_id)); // Token'i JSON yanıtının içine ekleyin
+        response.put("accounts", accountRepository.getUserAccountsById(user_id)); 
 
         return ResponseEntity.ok(response);
 
@@ -146,7 +146,7 @@ public class TransactController {
 
         Map<String, Object> response = new HashMap<>();
         response.put("message", "Transfer completed successfully.");
-        response.put("accounts", accountRepository.getUserAccountsById(user_id)); // Token'i JSON yanıtının içine ekleyin
+        response.put("accounts", accountRepository.getUserAccountsById(user_id)); 
 
         return ResponseEntity.ok(response);
 
@@ -199,7 +199,7 @@ public class TransactController {
 
         Map<String, Object> response = new HashMap<>();
         response.put("message", "Withdrawal Successfull!");
-        response.put("accounts", accountRepository.getUserAccountsById(user_id)); // Token'i JSON yanıtının içine ekleyin
+        response.put("accounts", accountRepository.getUserAccountsById(user_id));
 
         return ResponseEntity.ok(response);
 
@@ -262,7 +262,7 @@ public class TransactController {
 
         Map<String, Object> response = new HashMap<>();
         response.put("message", reasonCode);
-        response.put("accounts", accountRepository.getUserAccountsById(user_id)); // Token'i JSON yanıtının içine ekleyin
+        response.put("accounts", accountRepository.getUserAccountsById(user_id));
 
 
 

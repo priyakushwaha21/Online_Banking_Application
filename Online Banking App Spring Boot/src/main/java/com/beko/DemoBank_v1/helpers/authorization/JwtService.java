@@ -14,7 +14,6 @@ import java.util.Date;
 
 @Service
 public class JwtService {
-    // Güvenlik anahtarını oluşturun. Bu örnek için HMAC-SHA256 kullanılıyor.
 
 
     private String appSecret = "helloDarknessMyOldFriendIComeToTalkWithYouAgain";
@@ -62,10 +61,6 @@ public class JwtService {
         String[] parts = req.split(" ");
         return parts[1];
     }
-
-
-
-
 
 
 }

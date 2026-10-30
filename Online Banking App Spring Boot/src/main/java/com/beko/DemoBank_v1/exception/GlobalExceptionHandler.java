@@ -21,6 +21,4 @@ public class GlobalExceptionHandler {
         }
         throw ex;
     }
-
-    // Diğer istisnaları işlemek için başka yöntemler ekleyebilirsiniz.
 }

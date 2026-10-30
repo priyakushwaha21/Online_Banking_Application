@@ -39,7 +39,7 @@ function AccountForm({ onSaveAccount, open = true, onClose, actions}) {
     console.log(accessToken);
 
     try {
-      const apiUrl = "http://127.0.0.1:8070/account/create_account";
+      const apiUrl = "http://127.0.0.1:8071/account/create_account";
       const response = await axios.post(apiUrl, jsonData, {
         headers: {
           "Content-Type": "application/json",

@@ -51,8 +51,8 @@ public class AppController {
 
         //Set Objects:
         Map<String, Object> response = new HashMap<>();
-        response.put("userAccounts", getUserAccounts); // veya başka verileri ekleyebilirsiniz
-        response.put("totalBalance", totalAccountsBalance); // veya başka verileri ekleyebilirsiniz
+        response.put("userAccounts", getUserAccounts); 
+        response.put("totalBalance", totalAccountsBalance); 
         return ResponseEntity.ok(response);
 
     }
@@ -69,7 +69,7 @@ public class AppController {
         List<PaymentHistory> userPaymentHistory = paymentHistoryRepository.getPaymentsRecordsById(userId);
 
         Map<String, List> response = new HashMap<>();
-        response.put("payment_history", userPaymentHistory); // veya başka verileri ekleyebilirsiniz
+        response.put("payment_history", userPaymentHistory); 
 
 
         return ResponseEntity.ok(response);
@@ -88,7 +88,7 @@ public class AppController {
         List<TransactionHistory> userTransactionHistory = transactHistoryRepository.getTransactionRecordsById(userId);
 
         Map<String, List> response = new HashMap<>();
-        response.put("transaction_history", userTransactionHistory); // veya başka verileri ekleyebilirsiniz
+        response.put("transaction_history", userTransactionHistory); 
 
 
         return ResponseEntity.ok(response);
@@ -106,7 +106,7 @@ public class AppController {
         List<TransactionHistory> accountTransactionHistory = transactHistoryRepository.getTransactionRecordsByAccountId(accountId);
 
         Map<String, List> response = new HashMap<>();
-        response.put("transaction_history", accountTransactionHistory); // veya başka verileri ekleyebilirsiniz
+        response.put("transaction_history", accountTransactionHistory);
 
 
         return ResponseEntity.ok(response);

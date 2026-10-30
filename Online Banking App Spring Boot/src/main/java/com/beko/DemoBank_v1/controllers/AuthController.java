@@ -36,8 +36,6 @@ public class AuthController {
 
 
 
-
-
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Map<String, String> requestMap ,
                                    HttpSession session, HttpServletResponse response){
@@ -72,12 +70,12 @@ public class AuthController {
 
 
         //TODO: CHECK IF USER ACCOUNT IS VERIFIED:
-        int verified = userRepository.isVerified(getEmailInDatabase);
+        // int verified = userRepository.isVerified(getEmailInDatabase);
 
         //Check if Account is verified
-        if(verified !=1){
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Account verification required.");
-        }
+        // if(verified !=1){
+        //     return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Account verification required.");
+        // }
         //End of Check if Account is verified
 
 
@@ -89,27 +87,27 @@ public class AuthController {
         System.out.println("Jwt from login: " + jwt);
         System.out.println(jwtService.decodeToken(jwt));
         //Set Token String
-        String token = Token.generateToken();
+        // String token = Token.generateToken();
         //Send Token
 
         Map<String, Object> responseBody = new HashMap<>();
         responseBody.put("message", "Authentication confirmed" );
-        responseBody.put("access_token", jwt); // Token'i JSON yanıtının içine ekleyin
+        responseBody.put("access_token", jwt);
 
 
 
 
 
         //Set Session Attributes:
-        session.setAttribute("user", user);
-        System.out.println(user);
-        session.setAttribute("token", jwt);
-        session.setAttribute("authenticated", true);
+        // session.setAttribute("user", user);
+        // System.out.println(user);
+        // session.setAttribute("token", jwt);
+        // session.setAttribute("authenticated", true);
 
 
 
 
-        return ResponseEntity.ok(responseBody); // Çerezi başlığa ekleyin
+        return ResponseEntity.ok(responseBody);
 
 
     }
@@ -118,7 +116,7 @@ public class AuthController {
     @GetMapping("/logout")
     public ResponseEntity<?> logout(HttpSession session){
 
-        System.out.println("Merhaba berkin bu logout kısmındaki token yani başardın" + session.getAttribute("token"));
+        System.out.println("The token in this logout section succeeded" + session.getAttribute("token"));
         session.invalidate();
 
         return ResponseEntity.ok("Logged out successfully.");

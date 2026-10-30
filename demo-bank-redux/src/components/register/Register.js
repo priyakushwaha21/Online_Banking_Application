@@ -57,7 +57,7 @@ export default function SignUp() {
 
     try {
       const apiUrl =
-        "http://127.0.0.1:8070/register?confirm_password=" + confirmPassword;
+        "http://127.0.0.1:8071/register?confirm_password=" + confirmPassword;
       const response = await axios.post(apiUrl, jsonData, {
         headers: {
           "Content-Type": "application/json", // JSON verisi göndermek için content type ayarı

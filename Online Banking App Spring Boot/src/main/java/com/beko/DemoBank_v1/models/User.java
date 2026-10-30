@@ -2,19 +2,23 @@ package com.beko.DemoBank_v1.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
+
+@Table(name="users")
 public class User {
     @Id
+    
     private String user_id;
     @NotEmpty(message = "The First name field cannot be empty.")
     @Size(min=3, message = "The first nmae field must greater that 3 characters")
     private String first_name;
     @NotEmpty(message = "The Last name field cannot be empty.")
-    @Size(min=3, message = "The first nmae field must greater that 3 characters")
+    @Size(min=3, message = "The last name field must be at least 3 characters long.")
     private String  last_name;
     @Email
     @NotEmpty(message = "Email field cannot be empty.")

@@ -98,6 +98,7 @@ const defaultTheme = createTheme();
 
 export default function Dashboard() {
   const [open, setOpen] = React.useState(false);
+  const [activeMenu, setActiveMenu] = React.useState('dashboard');
   const navigate = useNavigate();
   // Boş bağımlılık dizisi, sadece bir kez çalışmasını sağlar (componentDidMount benzeri)
 
@@ -105,11 +106,15 @@ export default function Dashboard() {
     setOpen(!open);
   };
 
+  const handleMenuClick = (menuItem) => {
+    setActiveMenu(menuItem);
+  };
+
   const handleSignOut = async (event) => {
     event.preventDefault();
 
     try {
-      const apiUrl = "http://127.0.0.1:8070/logout";
+      const apiUrl = "http://127.0.0.1:8071/logout";
 
       //local stroge token
       const userInfo = JSON.parse(localStorage.getItem("userInfo"));
@@ -205,9 +210,9 @@ export default function Dashboard() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            {mainListItems}
+            {mainListItems(handleMenuClick)}
             <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+            {secondaryListItems(handleMenuClick)}
           </List>
         </Drawer>
         <Box
@@ -224,60 +229,120 @@ export default function Dashboard() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 500,
-                  }}
-                >
-                  <Chart />
-                </Paper>
-              </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 240,
-                  }}
-                >
-                  <TotalAccountBalance />
-                </Paper>
-              </Grid>
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-                  <Accounts />
-                </Paper>
-              </Grid>
-              <Grid item xs={12} container justifyContent="flex-end">
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={() => setIsFormOpen(true)}
-                  sx={{ backgroundColor: "#EB3D13" }}
-                >
-                  Add Account
-                </Button>
-                <AddAccount
-                  onSaveAccount={handleSaveAccount}
-                  open={isFormOpen}
-                  onClose={() => setIsFormOpen(false)}
-                />
-              </Grid>
-            </Grid>
-            <Grid>
-              <Paper sx={{ p: 2, display: "flex", flexDirection: "column" ,marginTop: 2 }}>
-                <TransactionHistory></TransactionHistory>
+            {activeMenu === 'dashboard' && (
+              <>
+                <Grid container spacing={3}>
+                  {/* Chart */}
+                  <Grid item xs={12} md={8} lg={9}>
+                    <Paper
+                      sx={{
+                        p: 2,
+                        display: "flex",
+                        flexDirection: "column",
+                        height: 500,
+                      }}
+                    >
+                      <Chart />
+                    </Paper>
+                  </Grid>
+                  {/* Recent Deposits */}
+                  <Grid item xs={12} md={4} lg={3}>
+                    <Paper
+                      sx={{
+                        p: 2,
+                        display: "flex",
+                        flexDirection: "column",
+                        height: 240,
+                      }}
+                    >
+                      <TotalAccountBalance />
+                    </Paper>
+                  </Grid>
+                  {/* Recent Orders */}
+                  <Grid item xs={12}>
+                    <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+                      <Accounts />
+                    </Paper>
+                  </Grid>
+                  <Grid item xs={12} container justifyContent="flex-end">
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={() => setIsFormOpen(true)}
+                      sx={{ backgroundColor: "#EB3D13" }}
+                    >
+                      Add Account
+                    </Button>
+                    <AddAccount
+                      onSaveAccount={handleSaveAccount}
+                      open={isFormOpen}
+                      onClose={() => setIsFormOpen(false)}
+                    />
+                  </Grid>
+                </Grid>
+                <Grid>
+                  <Paper sx={{ p: 2, display: "flex", flexDirection: "column" ,marginTop: 2 }}>
+                    <TransactionHistory></TransactionHistory>
+                  </Paper>
+                </Grid>
+              </>
+            )}
+
+            {activeMenu === 'orders' && (
+              <Paper sx={{ p: 4, display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px" }}>
+                <Typography variant="h4" color="textSecondary">
+                  Orders section - Coming Soon
+                </Typography>
               </Paper>
-            </Grid>
+            )}
+
+            {activeMenu === 'customers' && (
+              <Paper sx={{ p: 4, display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px" }}>
+                <Typography variant="h4" color="textSecondary">
+                  Customers section - Coming Soon
+                </Typography>
+              </Paper>
+            )}
+
+            {activeMenu === 'reports' && (
+              <Paper sx={{ p: 4, display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px" }}>
+                <Typography variant="h4" color="textSecondary">
+                  Reports section - Coming Soon
+                </Typography>
+              </Paper>
+            )}
+
+            {activeMenu === 'integration' && (
+              <Paper sx={{ p: 4, display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px" }}>
+                <Typography variant="h4" color="textSecondary">
+                  Integrations section - Coming Soon
+                </Typography>
+              </Paper>
+            )}
+
+            {activeMenu === 'current-month' && (
+              <Paper sx={{ p: 4, display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px" }}>
+                <Typography variant="h4" color="textSecondary">
+                  Current Month Report
+                </Typography>
+              </Paper>
+            )}
+
+            {activeMenu === 'last-quarter' && (
+              <Paper sx={{ p: 4, display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px" }}>
+                <Typography variant="h4" color="textSecondary">
+                  Last Quarter Report
+                </Typography>
+              </Paper>
+            )}
+
+            {activeMenu === 'year-end-sale' && (
+              <Paper sx={{ p: 4, display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px" }}>
+                <Typography variant="h4" color="textSecondary">
+                  Year-End Sale Report
+                </Typography>
+              </Paper>
+            )}
 
             <Copyright sx={{ pt: 4 }} />
           </Container>

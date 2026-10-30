@@ -19,7 +19,7 @@ public class IndexController {
 
     @GetMapping("/")
     public String getIndex(){
-        return "Merhaba, Spring Boot JSON örnegi!";
+        return "Spring Boot JSON example";
     }
 
     @GetMapping("/verify")

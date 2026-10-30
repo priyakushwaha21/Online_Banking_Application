@@ -94,7 +94,7 @@ function AccountForm({
     jsonData["account_id"] = currentAccount.account_id;
     jsonData["deposit_amount"] = amount;
 
-    const apiUrl = "http://127.0.0.1:8070/transact/deposit";
+    const apiUrl = "http://127.0.0.1:8071/transact/deposit";
 
     postRequestToApi(apiUrl, jsonData);
 
@@ -114,7 +114,7 @@ function AccountForm({
     jsonData["account_id"] = currentAccount.account_id;
     jsonData["withdrawal_amount"] = amount;
 
-    const apiUrl = "http://127.0.0.1:8070/transact/withdraw";
+    const apiUrl = "http://127.0.0.1:8071/transact/withdraw";
 
     postRequestToApi(apiUrl, jsonData);
 
@@ -135,7 +135,7 @@ function AccountForm({
     jsonData["targetAccount"] = targetAccount;
     jsonData["amount"] = amount;
 
-    const apiUrl = "http://127.0.0.1:8070/transact/transfer";
+    const apiUrl = "http://127.0.0.1:8071/transact/transfer";
 
     postRequestToApi(apiUrl, jsonData);
 
@@ -154,7 +154,7 @@ function AccountForm({
 
     paymentInfo["account_id"] = currentAccount.account_id;
 
-    const apiUrl = "http://127.0.0.1:8070/transact/payment";
+    const apiUrl = "http://127.0.0.1:8071/transact/payment";
 
     postRequestToApi(apiUrl, paymentInfo);
 
